@@ -1,4 +1,4 @@
-package ForgotPassword;
+package forgotpassword;
 
 import base.BaseTest;
 import org.junit.jupiter.api.Test;

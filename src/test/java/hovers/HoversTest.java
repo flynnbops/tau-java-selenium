@@ -1,4 +1,4 @@
-package Hovers;
+package hovers;
 
 import base.BaseTest;
 import org.junit.jupiter.api.Test;

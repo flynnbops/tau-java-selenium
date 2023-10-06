@@ -1,4 +1,4 @@
-package Login;
+package login;
 
 import base.BaseTest;
 import org.junit.jupiter.api.Test;

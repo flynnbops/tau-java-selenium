@@ -1,4 +1,4 @@
-package Dropdown;
+package dropdown;
 
 import base.BaseTest;
 import org.junit.jupiter.api.Test;
