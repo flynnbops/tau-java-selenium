@@ -10,7 +10,7 @@ public class HoversTest extends BaseTest {
 
     @Test
     public void HoverOverUser1(){
-        HoversPage hoversPage = homePage.ClickHovers();
+        HoversPage hoversPage = homePage.clickHovers();
         var caption = hoversPage.hoverOverFigure(1);
 
         assertTrue(caption.isCaptionDisplayed(), "Caption is not displayed");

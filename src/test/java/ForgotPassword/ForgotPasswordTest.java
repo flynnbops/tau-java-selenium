@@ -11,7 +11,7 @@ public class ForgotPasswordTest extends BaseTest {
 
     @Test
     public void ForgotPassword(){
-        ForgotPasswordPage forgotPasswordPage = homePage.ForgotPassword();
+        ForgotPasswordPage forgotPasswordPage = homePage.clickForgotPassword();
         PasswordResetPage reset = forgotPasswordPage.resetPassword("a@acom");
 
         // Looks like an issue with th online version of the app.
