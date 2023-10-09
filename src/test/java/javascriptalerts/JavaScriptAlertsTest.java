@@ -13,7 +13,7 @@ public class JavaScriptAlertsTest extends BaseTest {
     public void javaScriptAlertTest(){
         var jsAlertsPage = homePage.clickJavaScriptAlerts();
         jsAlertsPage.triggerJSAlert();
-        assertEquals("I am a JS Alert", jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
+        assertEquals(jsAlertsPage.getAlertMessage(), jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
         jsAlertsPage.acceptAlert();
         assertEquals("You successfully clicked an alert", jsAlertsPage.getResultText(), "The result text is not correct");
     }
@@ -23,7 +23,7 @@ public class JavaScriptAlertsTest extends BaseTest {
     public void acceptJavaScriptConfirmTest(){
         var jsAlertsPage = homePage.clickJavaScriptAlerts();
         jsAlertsPage.triggerJSConfirm();
-        assertEquals("I am a JS Confirm", jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
+        assertEquals(jsAlertsPage.getConfirmMessage(), jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
         jsAlertsPage.acceptAlert();
         assertEquals("You clicked: Ok", jsAlertsPage.getResultText(), "The result does not show the pop up was dismissed");
     }
@@ -33,7 +33,7 @@ public class JavaScriptAlertsTest extends BaseTest {
     public void dismissJavaScriptConfirmTest(){
         var jsAlertsPage = homePage.clickJavaScriptAlerts();
         jsAlertsPage.triggerJSConfirm();
-        assertEquals("I am a JS Confirm", jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
+        assertEquals(jsAlertsPage.getConfirmMessage(), jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
         jsAlertsPage.dismissJSConfirm();
         assertEquals("You clicked: Cancel", jsAlertsPage.getResultText(), "The result does not show the pop up was dismissed");
     }
@@ -44,7 +44,7 @@ public class JavaScriptAlertsTest extends BaseTest {
         String message = "Hello there!";
         var jsAlertsPage = homePage.clickJavaScriptAlerts();
         jsAlertsPage.triggerJSPrompt();
-        assertEquals("I am a JS prompt", jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
+        assertEquals(jsAlertsPage.getPromptMessage(), jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
         jsAlertsPage.fillInJSPrompt(message);
         assertEquals("You entered: " + message, jsAlertsPage.getResultText(), "The result does not match what was entered into the prompt.");
     }
@@ -54,7 +54,7 @@ public class JavaScriptAlertsTest extends BaseTest {
     public void cancelJavaScriptPromptTest(){
         var jsAlertsPage = homePage.clickJavaScriptAlerts();
         jsAlertsPage.triggerJSPrompt();
-        assertEquals("I am a JS prompt", jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
+        assertEquals(jsAlertsPage.getPromptMessage(), jsAlertsPage.getJSAlertText(), "Alert text is not what we expected");
         jsAlertsPage.dismissJSConfirm();
         assertEquals("You entered: null", jsAlertsPage.getResultText(), "The result does not show the prompt was cancelled.");
     }

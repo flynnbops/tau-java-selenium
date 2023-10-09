@@ -6,10 +6,23 @@ import org.openqa.selenium.WebDriver;
 public class JavaScriptAlertsPage {
 
     private WebDriver driver;
+
     private By result = By.id("result");
 
     public JavaScriptAlertsPage(WebDriver driver){
         this.driver = driver;
+    }
+
+    public String getAlertMessage() {
+        return "I am a JS Alert";
+    }
+
+    public String getConfirmMessage() {
+        return "I am a JS Confirm";
+    }
+
+    public String getPromptMessage() {
+        return "I am a JS prompt";
     }
 
     public void triggerJSAlert(){
