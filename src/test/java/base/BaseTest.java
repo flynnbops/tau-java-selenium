@@ -15,7 +15,7 @@ public class BaseTest {
     public void setUp() {
         System.getProperty("webdriver.chrome.driver", "resources/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("headless");
+//        options.addArguments("headless");
 
         driver = new ChromeDriver(options);
         driver.get("https://the-internet.herokuapp.com/");
