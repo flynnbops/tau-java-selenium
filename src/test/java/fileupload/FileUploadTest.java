@@ -15,10 +15,10 @@ public class FileUploadTest extends BaseTest {
     public void uploadTextFileTest(){
         String testFile = "test.txt";
         var fileUploaderPage = homePage.clickFileUploader();
-        assertEquals(fileUploaderPage.getTitle(), "File Uploader", "File uploader page title is wrong.");
+        assertEquals("File Uploader", fileUploaderPage.getTitle(), "File uploader page title is wrong.");
         fileUploaderPage.uploadFile(testFileDirectory + "/" + testFile);
 
-        assertEquals(fileUploaderPage.getTitle(), "File Uploaded!", "File was not uploaded");
+        assertEquals("File Uploaded!", fileUploaderPage.getTitle(), "File was not uploaded");
         assertEquals(fileUploaderPage.getUploadMessage(), testFile, "Uploaded file name is incorrect");
     }
 }
