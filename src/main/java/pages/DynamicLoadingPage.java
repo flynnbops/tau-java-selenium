@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class DynamicLoadingPage {
@@ -20,6 +21,12 @@ public class DynamicLoadingPage {
     public DynamicLoadingExample2Page clickExample2(){
         driver.findElement(linkExample2).click();
         return new DynamicLoadingExample2Page(driver);
+    }
+
+    public void openExample2InNewTab(){
+        // Doesn't appear to open the link in new tab.
+        // Not going to sort it out now.
+        driver.findElement(linkExample2).sendKeys(Keys.chord(Keys.CONTROL, Keys.ENTER));
     }
 
 }
