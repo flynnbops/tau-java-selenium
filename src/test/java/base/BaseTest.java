@@ -13,7 +13,8 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        System.getProperty("webdriver.chrome.driver", "resources/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing");
+//        System.getProperty("webdriver.chrome.driver", "resources/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing");
+        System.getProperty("webdriver.chrome.driver", "resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
 //        options.addArguments("headless");
 
