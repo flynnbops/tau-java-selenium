@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pages.HomePage;
+import utils.WindowManager;
 
 public class BaseTest {
     private WebDriver driver;
@@ -30,5 +31,9 @@ public class BaseTest {
 
         // Close window but leaves the session running.
         // driver.close();
+    }
+
+    public WindowManager getwindowManager(){
+        return new WindowManager(driver);
     }
 }
