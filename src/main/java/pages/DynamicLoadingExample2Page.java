@@ -8,28 +8,25 @@ import org.openqa.selenium.support.ui.FluentWait;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
-public class DynamicLoadingExample1Page {
+public class DynamicLoadingExample2Page {
     private WebDriver driver;
     private By startButton = By.cssSelector("#start button");
-
     private By loadedTextId = By.id("finish");
-    private By loadingIndicator = By.id("loading");
 
-    public DynamicLoadingExample1Page(WebDriver driver) {
+    public DynamicLoadingExample2Page(WebDriver driver) {
         this.driver = driver;
     }
 
     public void clickStartButton() {
         driver.findElement(startButton).click();
+
         FluentWait wait= new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(5))
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoSuchElementException.class);
 
-        // Wait for the loading bar to disappear
-        wait.until(ExpectedConditions.invisibilityOf(
-                driver.findElement(loadingIndicator)));
-
+        // Wait for the element to load
+        wait.until(ExpectedConditions.visibilityOfElementLocated(loadedTextId));
     }
 
     public String getLoadedElementText() {
